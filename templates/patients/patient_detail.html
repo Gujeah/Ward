@@ -1,0 +1,35 @@
+
+<!--{% load static %}
+<link
+rel="stylesheet"
+type="text/css"
+href="{% static 'patients/css/bootstrap.css'%}"
+/> -->
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    
+    <h1>Patient details</h1>
+
+
+</head>
+
+ 
+<body>
+    {% for patient in object_list %}
+    <a href="{{patient.get_absolute_url}}">Read More</a>
+   
+    <p>{{patient.first_name}}</p>
+    <p>{{patient.id_number}}</p>
+    
+    <p>{{patient.last_name}}</p>
+    <p>{{patient.email}}</p>
+    <p>{{patient.date_of_birth}}</p>
+    <p>{{patient.temperature}}</p>  
+    <p>{{patient.heart_rate}}</p>
+    <p>{{patient.pulse_oxymetry}}</p>
+</body>
+{% endfor %} 
+</html>
